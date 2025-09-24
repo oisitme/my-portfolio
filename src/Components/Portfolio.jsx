@@ -9,7 +9,7 @@ const Portfolio = ()=>{
 
     return(
         <>
-        <h1 className="text-4xl md:text-6xl text-center text-white font-bold mt-20">Portfolio</h1>
+        <h1 className="text-4xl md:text-6xl text-center text-white font-bold mt-18 md:mt-20">Portfolio</h1>
         <div id="portfolio" className='flex  flex-col md:flex-row gap-6 px-5 mt-7 '>
             {/* First project - glassmorphism card */}
             <motion.div
@@ -70,7 +70,7 @@ const Portfolio = ()=>{
                     </p>
                     <div className="flex gap-4 mt-2">
                         <a
-                            href="https://resume-builder-oi.vercel.app/"
+                            href="https://oisitme.github.io/ResumeBuilder/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 px-5 py-2 rounded-xl bg-gradient-to-r from-[#00f0ff] to-[#0ff] text-[#140F20] font-semibold shadow hover:from-[#0ff] hover:to-[#00f0ff] transition"
