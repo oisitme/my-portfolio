@@ -51,8 +51,8 @@ const Front = ()=>{
       </motion.div>
       {/* hero section */}
       <div className=" absolute bottom-4 md:static mt-20">
-      <div className="flex flex-col gap-2 md:gap-5 px-4 md:px-12" >
-      <motion.h1 className=" text-[15px] md:text-3xl md:mt-28 font-bold overflow-hidden whitespace-nowrap"
+      <div className="flex flex-col gap-2 md:gap-5 px-6 md:px-12" >
+      <motion.h1 className=" text-[15px] ml-10 md:ml-0 md:text-3xl md:mt-28 font-bold overflow-hidden whitespace-nowrap"
         initial={{width:0}}
         animate={{width:'100%'}}
         transition={{duration:2,ease:'easeIn',repeat:1}}
@@ -69,7 +69,7 @@ const Front = ()=>{
       </div>
       </div>
       {/* social Links */}
-      <div className=" absolute bottom-3 md:static flex flex-col ml-60  gap-5 md:flex-row  md:gap-9 mt-10 md:ml-12">
+      <div className=" absolute bottom-2 md:static flex flex-col ml-64  gap-5 md:flex-row  md:gap-9 mt-10 md:ml-12">
         {/* whatsapp */}
         <a 
         href="https://wa.me/7065508384"
