@@ -11,6 +11,23 @@ import Contact from "./Contact"
 
 const Front = ()=>{
   const[open,setOpen] = useState(false);
+  const [downloadMessage, setDownloadMessage] = useState("");
+
+  const handleResumeDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/assets/MyResume.pdf";
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+
+    setDownloadMessage("Resume opened. You can download it from your browser viewer.");
+    window.setTimeout(() => {
+      setDownloadMessage("");
+    }, 3000);
+  };
+
     return(
         <>
         {/* navbar starts here */}
@@ -99,8 +116,9 @@ const Front = ()=>{
         </a>
       </div>
       {/* download resume button for mobile screens */}
-      <motion.a href ="/assets/MyResume.pdf"
-      download="Raushan_kumar_Resume"
+      <motion.button
+      type="button"
+      onClick={handleResumeDownload}
       className="inline-block absolute translate-x-28 bottom-15 z-20 scale-90 md:scale-100 md:bottom-44 md:translate-x-10 px-3 py-3 rounded-4xl text-white bg-[#150B9B] font-bold  hover:bg-blue-800 hover:md:scale-105"
       initial={{y:100,opacity:0}}
       animate={{y:0,opacity:1}}
@@ -108,7 +126,12 @@ const Front = ()=>{
 
       >
         Download Resume
-      </motion.a>
+      </motion.button>
+      {downloadMessage && (
+        <div className="fixed bottom-6 left-1/2 z-50 w-[88%] max-w-sm -translate-x-1/2 rounded-2xl border border-white/20 bg-black/85 px-4 py-3 text-center text-sm font-medium text-white shadow-2xl backdrop-blur-md">
+          {downloadMessage}
+        </div>
+      )}
       <motion.div className="flex justify-center md:justify-end -translate-y-40  md:-translate-y-90 h-20 md:h-42 "
        initial={{scale:0.5,opacity:0}}
        animate={{scale:1,opacity:1}}
